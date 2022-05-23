@@ -1,0 +1,34 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.18.0",
+    "@babel/preset-env": "^7.18.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^28.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.0"
+  },
+  "name": "webpack-boilerplate",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Kwentsir/JavaScript-Capstone-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "git@github.com:Kwentsir/JavaScript-Capstone-Project.git/issues"
+  },
+  "homepage": "git@github.com:Kwentsir/JavaScript-Capstone-Project.git#readme"
+}
