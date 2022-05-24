@@ -51,7 +51,7 @@ footer {
 }
 
 /* comment pop-up */
-.comment-popup{
+.comment-popup {
   position: absolute;
   top: 20px;
   left: 10%;
@@ -60,7 +60,7 @@ footer {
   height: 700px;
 }
 
-.comment-popup-close-button{
+.comment-popup-close-button {
   position: absolute;
   font-size: 42px;
   right: 10px;
@@ -69,17 +69,21 @@ footer {
   padding: 5px;
   border-top: 0;
   border-bottom-left-radius: 50%;
-border-bottom-right-radius: 50%;  
-color: white;
+  border-bottom-right-radius: 50%;
+  color: white;
   mix-blend-mode: difference;
 }
 
-#image-frame{
+#image-frame {
   height: 70vh;
   overflow: hidden;
 }
 
-#media-poster{
+#media-poster {
   position: relative;
   width: 100%;
+}
+
+.display-none {
+  display: none;
 }

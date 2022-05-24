@@ -26,11 +26,13 @@ const addClickEvent = (button) => {
 const openPopup = (event) => {
   let targetId = event.target.id;
 
+  let dialog = document.querySelector('dialog');
+  dialog.showModal();
+
   getSingleMovieData(targetId).then((singleData) => {
-    let popUp = document.createElement("div");
-    popUp.classList.add("comment-popup");
-    popUp.innerHTML = `
-    <a class="comment-popup-close-button href="#">X</a>
+  
+    dialog.innerHTML = `
+    <a id="close-button" class="comment-popup-close-button" href="#">X</a>
    
     <div id="image-frame">
     <img id="media-poster" src="${singleData.image.original}">
@@ -40,7 +42,12 @@ const openPopup = (event) => {
     <p>${singleData.summary}</p>
     <br>
     `;
-    document.body.appendChild(popUp);
+
+
+    let closeButton = document.querySelector("#close-button");
+    closeButton.addEventListener("click", () => {
+      dialog.close();
+    });
   });
 };
 
