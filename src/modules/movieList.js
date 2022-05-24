@@ -6,8 +6,8 @@ const displayMovies = (data) => {
 <h2>${movie.name}</h2>
 <p class="genre">${movie.genres}</p>
 <div class="button">
-<button>Comments</button>
-<button>Reservations</button>
+<button id="comment">Comments</button>
+<button id="reserve">Reservations</button>
 </article>
 `;
   });
