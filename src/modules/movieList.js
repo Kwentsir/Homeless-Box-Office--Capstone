@@ -5,8 +5,7 @@ const displayMovies = (data) => {
 <img src="${movie.image.medium}" alt="${movie.name}">
 <h2>${movie.name}</h2>
 <p class="genre">${movie.genres}</p>
-<p class = "summary">${movie.summary}</p>
-<div>
+<div class="button">
 <button>Comments</button>
 <button>Reservations</button>
 </article>

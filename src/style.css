@@ -49,6 +49,22 @@ header {
   text-align: center;
 }
 
+article {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.genre {
+  gap: 2px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.button {
+  margin-bottom: 50px;
+}
+
 footer {
   height: 30px;
   width: 100%;
