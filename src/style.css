@@ -1,9 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
-  font-size: 16px;
+  background-color: #000107;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo-text {
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+}
+
+#menu-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+#now-showing {
+  color: white;
+  font-size: 20px;
+}
+
+#menu-ul li a {
+  color: white;
 }
