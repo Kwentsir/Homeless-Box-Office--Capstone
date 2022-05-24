@@ -81,8 +81,9 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #fff;
+  background: #000;
   padding-top: 5px;
+  color: #fff;
 }
 
 .hide-reservation {
