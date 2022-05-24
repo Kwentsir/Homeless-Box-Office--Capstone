@@ -12,8 +12,8 @@ import "./style.css";
 // fetchData();
 
 const getSingleMovieData = async (id) => {
-  let request = await fetch(`https://api.tvmaze.com/shows/${id}`);
-  singleData = await request.json();
+  let response = await fetch(`https://api.tvmaze.com/shows/${id}`);
+  let singleData = await response.json();
   return singleData;
 };
 
@@ -26,16 +26,22 @@ const addClickEvent = (button) => {
 const openPopup = (event) => {
   let targetId = event.target.id;
 
-  getSingleMovieData(targetId);
-  console.log(singleData);
-
-  let popUp = document.createElement("div");
-  popUp.classList.add("comment-popup");
-  popUp.innerHTML = `
-  <a class="comment-popup-close-button href="#">X</a>
-  <p>${targetId}</p>
-  `;
-  document.body.appendChild(popUp);
+  getSingleMovieData(targetId).then((singleData) => {
+    let popUp = document.createElement("div");
+    popUp.classList.add("comment-popup");
+    popUp.innerHTML = `
+    <a class="comment-popup-close-button href="#">X</a>
+   
+    <div id="image-frame">
+    <img id="media-poster" src="${singleData.image.original}">
+    </div>
+    <p>${singleData.name} ${singleData.rating.average}</p>
+    <p><strong>Genre:</strong> ${singleData.genres}</p>
+    <p>${singleData.summary}</p>
+    <br>
+    `;
+    document.body.appendChild(popUp);
+  });
 };
 
 commentButtons.forEach(addClickEvent);

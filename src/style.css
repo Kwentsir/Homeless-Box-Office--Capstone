@@ -66,4 +66,20 @@ footer {
   right: 10px;
   z-index: 999;
   cursor: pointer;
+  padding: 5px;
+  border-top: 0;
+  border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;  
+color: white;
+  mix-blend-mode: difference;
+}
+
+#image-frame{
+  height: 70vh;
+  overflow: hidden;
+}
+
+#media-poster{
+  position: relative;
+  width: 100%;
 }
