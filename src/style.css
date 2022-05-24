@@ -43,6 +43,12 @@ header {
   color: white;
 }
 
+#heading h1 {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
 footer {
   height: 30px;
   width: 100%;
