@@ -59,3 +59,11 @@ footer {
   background-color: aqua;
   height: 700px;
 }
+
+.comment-popup-close-button{
+  position: absolute;
+  font-size: 42px;
+  right: 10px;
+  z-index: 999;
+  cursor: pointer;
+}
