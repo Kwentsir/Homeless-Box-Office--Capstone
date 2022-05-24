@@ -1,12 +1,4 @@
-const getMovies = async () => {
-  const response = await fetch('https://api.tvmaze.com/shows');
-  const data = await response.json();
-  const slicedData = data.slice(0, 50);
-  displayMovies(slicedData);
-};
-getMovies();
-
-let displayMovies = (data) => {
+const displayMovies = (data) => {
   const displayMovies = document.querySelector('#movie-list');
   data.forEach((movie) => {
     displayMovies.innerHTML += `<article class="movie">
@@ -21,5 +13,13 @@ let displayMovies = (data) => {
 `;
   });
 };
+
+const getMovies = async () => {
+  const response = await fetch('https://api.tvmaze.com/shows');
+  const data = await response.json();
+  const slicedData = data.slice(0, 50);
+  displayMovies(slicedData);
+};
+getMovies();
 
 export default getMovies;
