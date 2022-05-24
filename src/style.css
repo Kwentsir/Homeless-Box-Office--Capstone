@@ -42,3 +42,10 @@ header {
 #menu-ul li a {
   color: white;
 }
+
+footer {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
