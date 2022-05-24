@@ -1,10 +1,9 @@
-import enableReserve from './reserve';
-import {commentFunction} from './comment'
+import enableReserve from './reserve.js';
+import commentFunction from './comment.js';
 
 const displayMovies = (data) => {
   const displayMovies = document.querySelector('#movie-list');
   data.forEach((movie) => {
-    console.log(movie);
     displayMovies.innerHTML += `<article class="movie">
 <img src="${movie.image.medium}" alt="${movie.name}">
 <h2>${movie.name}</h2>
