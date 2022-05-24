@@ -12,12 +12,10 @@ import "./style.css";
 // fetchData();
 
 const getSingleMovieData = async (id) => {
-  await fetch(`https://api.tvmaze.com/shows/${id}`)
-    .then((response) => response.json())
-    .then((json) => console.log(json));
+  let request = await fetch(`https://api.tvmaze.com/shows/${id}`);
+  singleData = await request.json();
+  return singleData;
 };
-
-getSingleMovieData(5);
 
 const commentButtons = document.querySelectorAll(".comment");
 
@@ -27,6 +25,9 @@ const addClickEvent = (button) => {
 
 const openPopup = (event) => {
   let targetId = event.target.id;
+
+  getSingleMovieData(targetId);
+  console.log(singleData);
 
   let popUp = document.createElement("div");
   popUp.classList.add("comment-popup");
