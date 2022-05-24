@@ -43,6 +43,28 @@ header {
   color: white;
 }
 
+#heading h1 {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+article {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.genre {
+  gap: 2px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.button {
+  margin-bottom: 50px;
+}
+
 footer {
   height: 30px;
   width: 100%;
@@ -52,10 +74,11 @@ footer {
 
 /* comment pop-up */
 .comment-popup {
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  border: none;
+  width: 100vw;
   background-color: #000107;
-  height: auto;
+  height: 100vh;
 }
 
 .comment-popup-close-button {
@@ -95,4 +118,40 @@ footer {
 
 .display-none {
   display: none;
+}
+/* Reservations */
+
+#display-reservations {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  padding-top: 5px;
+  color: #fff;
+}
+
+.hide-reservation {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.movieContent {
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.reserve-title {
+  text-align: center;
+}
+
+.movieContent table {
+  text-align: left;
 }

@@ -18,7 +18,7 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
   },
-  "name": "webpack-boilerplate",
+  "name": "javascript-capstone-project",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "version": "1.0.0",
   "private": true,
