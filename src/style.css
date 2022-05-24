@@ -53,10 +53,9 @@ footer {
 /* comment pop-up */
 .comment-popup {
   position: absolute;
-  top: 20px;
-  width: 80%;
-  background-color: aqua;
-  height: 700px;
+  width: 100%;
+  background-color: #000107;
+  height: auto;
 }
 
 .comment-popup-close-button {
@@ -73,14 +72,25 @@ footer {
   mix-blend-mode: difference;
 }
 
-#image-frame {
-  height: 70vh;
-  overflow: hidden;
+.movie-description {
+  width: 100%;
+  text-align: center;
+}
+
+.movie-description p {
+  width: 50%;
+  margin: 20px auto;
+  color: white;
+}
+
+.poster-container {
+  width: 100%;
+  text-align: center;
 }
 
 #media-poster {
   position: relative;
-  width: 100%;
+  width: 20%;
 }
 
 .display-none {
