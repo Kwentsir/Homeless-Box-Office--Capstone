@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_movieList_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/movieList.js */ \"./src/modules/movieList.js\");\n\n\n// const involveapi = 'yVTwDpeZ7FtqX6HWOiZh';\n\nconst displayMovies = document.querySelector('#movie-list');\n_modules_movieList_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].forEach(\n  (movie) =>\n    {displayMovies.innerHTML += `<article class=\"movie\">\n<img src=\"${movie.image.medium}\" alt=\"${movie.name}\">\n<h2>${movie.name}</h2>\n<p class=\"genre\">${movie.genres}</p>\n<p class = \"summary\">${movie.summary}</p>\n<div>\n<button>Comments</button>\n<button>Reservations</button>\n</article>\n`}\n);\n\n\n//# sourceURL=webpack://javascript-capstone-project/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_movieList_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/movieList.js */ \"./src/modules/movieList.js\");\n\n\n// const involveapi = 'yVTwDpeZ7FtqX6HWOiZh';\n\nlet displayMovies = () => {\nconst displayMovies = document.querySelector('#movie-list');\n_modules_movieList_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].forEach(\n  (movie) =>\n    {displayMovies.innerHTML += `<article class=\"movie\">\n<img src=\"${movie.image.medium}\" alt=\"${movie.name}\">\n<h2>${movie.name}</h2>\n<p class=\"genre\">${movie.genres}</p>\n<p class = \"summary\">${movie.summary}</p>\n<div>\n<button>Comments</button>\n<button>Reservations</button>\n</article>\n`}\n);\n}\n\n\n//# sourceURL=webpack://javascript-capstone-project/./src/index.js?");
 
 /***/ }),
 
@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getMovies = async () => {\n  const response = await fetch('https://api.tvmaze.com/shows');\n  const data = await response.json();\n  return data.slice(0, 50);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getMovies);\n\n\n//# sourceURL=webpack://javascript-capstone-project/./src/modules/movieList.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getMovies = async () => {\n  const response = await fetch('https://api.tvmaze.com/shows');\n  const data = await response.json();\n  const slicedData = data.slice(0, 50);\n  displayMovies(slicedData);\n};\ngetMovies();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getMovies);\n\n\n//# sourceURL=webpack://javascript-capstone-project/./src/modules/movieList.js?");
 
 /***/ })
 
