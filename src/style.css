@@ -74,7 +74,7 @@ footer {
 
 /* Reservations */
 
-#display-reservations{
+#display-reservations {
   display: none;
   position: fixed;
   top: 0;
@@ -100,10 +100,10 @@ footer {
   text-align: center;
 }
 
-.reserve-title{
+.reserve-title {
   text-align: center;
 }
 
-.movieContent table{
+.movieContent table {
   text-align: left;
 }

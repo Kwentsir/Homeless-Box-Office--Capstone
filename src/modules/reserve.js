@@ -1,7 +1,7 @@
 const enableReserve = () => {
-    const showReservation = ({...data}) => {
-        const reservationContent = document.querySelector('#display-reservations');
-        reservationContent.innerHTML = `
+  const showReservation = ({ ...data }) => {
+    const reservationContent = document.querySelector('#display-reservations');
+    reservationContent.innerHTML = `
             <span class="hide-reservation" title="Close preview">X</span>
             <section class="movieContent">
                 <div class="branding">
@@ -20,25 +20,27 @@ const enableReserve = () => {
                 </table>
             <section>
         `;
-        const hideReservationBtn = reservationContent.querySelector('.hide-reservation');
-        reservationContent.style.display = 'flex';
-        hideReservationBtn.addEventListener('click', () => {
-            reservationContent.style.display = 'none';
-        });
-    }
-    const movies = document.querySelectorAll('.show-reserve-popup');
-    movies.forEach((movie) => {
-        const id = movie.getAttribute('id');
-        const title = movie.getAttribute('title');
-        const logo = movie.getAttribute('banner');
-        const rating = movie.getAttribute('rating');
-        const premier = movie.getAttribute('premier');
-        const ended = movie.getAttribute('ended');
-        const language = movie.getAttribute('language');
-        movie.addEventListener("click", () =>{
-            showReservation({movieId:id, title, logo, premier, rating, ended, language});
-        })
+    const hideReservationBtn = reservationContent.querySelector('.hide-reservation');
+    reservationContent.style.display = 'flex';
+    hideReservationBtn.addEventListener('click', () => {
+      reservationContent.style.display = 'none';
     });
+  };
+  const movies = document.querySelectorAll('.show-reserve-popup');
+  movies.forEach((movie) => {
+    const id = movie.getAttribute('id');
+    const title = movie.getAttribute('title');
+    const logo = movie.getAttribute('banner');
+    const rating = movie.getAttribute('rating');
+    const premier = movie.getAttribute('premier');
+    const ended = movie.getAttribute('ended');
+    const language = movie.getAttribute('language');
+    movie.addEventListener('click', () => {
+      showReservation({
+        movieId: id, title, logo, premier, rating, ended, language,
+      });
+    });
+  });
 };
 
 export default enableReserve;
