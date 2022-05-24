@@ -49,3 +49,13 @@ footer {
   text-align: center;
   color: white;
 }
+
+/* comment pop-up */
+.comment-popup{
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  width: 80%;
+  background-color: aqua;
+  height: 700px;
+}

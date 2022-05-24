@@ -13,13 +13,15 @@ fetchData();
 
 const commentButtons = document.querySelectorAll(".comment");
 
-let addClickEvent = (button) => {
-  button.addEventListener("click", getIdFromButton);
+const addClickEvent = (button) => {
+  button.addEventListener("click", openPopup);
 };
 
-let getIdFromButton = (event) => {
-  let targetEvent = event.target;
-  return targetEvent.id;
+const openPopup = () => {
+  let popUp = document.createElement("div");
+  popUp.classList.add("comment-popup");
+  popUp.innerHTML = `hi`;
+  document.body.appendChild(popUp);
 };
 
 commentButtons.forEach(addClickEvent);
