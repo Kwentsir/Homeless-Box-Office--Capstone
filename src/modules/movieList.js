@@ -1,5 +1,20 @@
 import enableReserve from "./reserve.js";
 import commentFunction from "./comment.js";
+import { getLike, getLikes, postLike } from "./likes.js";
+
+const listenHeartClicks = () =>{
+  const likeHeart = document.querySelectorAll(".like-icon");
+  likeHeart.forEach((icon) =>{
+    icon.addEventListener('click', async (e) =>{
+      const {id} = e.target.dataset;
+      const response = await postLike(id);
+      if (response.status === 201){
+        e.target.nextElementSibling.innerHTML = Number(e.target.nextElementSibling.innerHTML) + 1;
+      }
+    });
+  });
+};
+const likes = await getLikes();
 
 const displayMovies = (data) => {
   const displayMovies = document.querySelector("#movie-list");
@@ -9,8 +24,8 @@ const displayMovies = (data) => {
 <h2>${movie.name}</h2>
 <p class="genre">${movie.genres}</p>
 <div class="like-rating">
-<i class="fa-solid fa-heart" id="${movie.id}"></i>
-<i class="fa-solid fa-star" id="${movie.id}"></i>
+<i class="fa-solid fa-heart like-icon" id="${movie.id}"></i>
+<i class="fa-solid fa-star rate-icon" id="${movie.id}"></i>
 </div>
 <div class="button">
 <button class="comment" id="${movie.id}">Comments</button>
