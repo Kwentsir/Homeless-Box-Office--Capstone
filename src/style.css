@@ -181,6 +181,7 @@ footer {
   background: #000;
   padding-top: 5px;
   color: #fff;
+  overflow-y: auto;
 }
 
 .hide-reservation {
@@ -204,4 +205,10 @@ footer {
 
 .movieContent table {
   text-align: left;
+}
+
+.Reserv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
