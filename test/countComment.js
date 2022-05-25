@@ -1,5 +1,3 @@
-
-
 const countComment = () => {
   const reviewCounterSpan = document.querySelector("#review-count");
 

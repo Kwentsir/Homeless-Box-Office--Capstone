@@ -3,21 +3,15 @@
  */
 import countComment from "./countComment";
 
-describe("tests", () => {
- 
-
-  beforeEach(() => {
-    const mockReviewSection = () => {
-      let mockUl = document.createElement("ul");
-      mockUl.setAttribute("id", "comment-section");
-  
-      let listItem = document.createElement("li");
-      mockUl.appendChild(listItem);
-    };
-    mockReviewSection();
+  test("count the number of the li elements in the review section", () => {
+      document.body.innerHTML = `
+    <ul id="comment-section">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    </ul>
+  `;
+    expect(countComment()).toBe(4);
   });
 
-  test("adds 1 + 2 to equal 3", () => {
-    expect(countComment()).toBe(1);
-  });
-});
