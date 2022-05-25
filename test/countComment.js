@@ -1,10 +1,12 @@
+
+
 const countComment = () => {
-  const reviewCounterSpan = document.querySelector('#review-count');
+  const reviewCounterSpan = document.querySelector("#review-count");
 
-  const commentCounter = document.querySelector('#comment-section');
-  const allChildren = commentCounter.getElementsByTagName('li').length;
+  const commentCounter = document.querySelector("#comment-section");
+  const allChildren = commentCounter.getElementsByTagName("li").length;
 
-  reviewCounterSpan.innerHTML = allChildren;
+  return allChildren;
 };
 
 export default countComment;
