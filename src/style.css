@@ -128,8 +128,9 @@ footer {
   color: white;
 }
 
-#comment-section h4 {
-  color: azure;
+#review-title {
+  color: white;
+  font-weight: 600;
 }
 
 #comment-section hr {

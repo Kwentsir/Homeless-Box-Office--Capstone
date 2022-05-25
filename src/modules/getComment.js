@@ -1,11 +1,7 @@
 const getComment = (idTarget) => {
-  const urlRoot =
-    "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yVTwDpeZ7FtqX6HWOiZh/comments?item_id=item";
+  const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yVTwDpeZ7FtqX6HWOiZh/comments?item_id=item';
 
-  fetch(`${urlRoot}${idTarget}`)
-    .then((response) => response.json())
-    .then((json) => displayComment(json));
-  let displayCommentContainer = document.querySelector("#comment-section");
+  const displayCommentContainer = document.querySelector('#comment-section');
 
   const displayComment = (comments) => {
     comments.forEach((comment) => {
@@ -15,6 +11,10 @@ const getComment = (idTarget) => {
       `;
     });
   };
+
+  fetch(`${urlRoot}${idTarget}`)
+    .then((response) => response.json())
+    .then((json) => displayComment(json));
 };
 
 export default getComment;
