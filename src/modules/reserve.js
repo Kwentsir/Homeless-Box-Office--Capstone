@@ -25,7 +25,17 @@ const enableReserve = () => {
                 </h3>
                 <ul class="resevertions">
                   Fetching data....
-                </ul> 
+                </ul>
+                <h3 class="reservation-title">
+    reservation (<span class="Add Reservation">Add</span>)
+    </h3>
+    <ul class="reservation">
+    </ul> 
+      <li<form class="reserv-form">
+      <input type="text" name="username" placeholder="Your name" required>
+      <textarea placeholder="Your insights" name="date" required minlength="1"></textarea>
+      <button type="submit">Submit</button>
+    </form>
             <section>
         `;
     const hideReservationBtn = reservationContent.querySelector('.hide-reservation');
