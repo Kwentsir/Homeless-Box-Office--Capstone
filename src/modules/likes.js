@@ -5,4 +5,12 @@ const getLikes = async () => {
   return data;
 };
 
-export default getLikes;
+const getLike = (id, likes) => {
+  if (likes.length > 0) {
+    const result = likes.find((like) => +like.item_id === +id);
+    return result ? result.likes : 0;
+  }
+  return 0;
+};
+
+export {getLikes, getLike};

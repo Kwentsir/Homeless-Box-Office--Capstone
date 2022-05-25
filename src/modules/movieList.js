@@ -1,13 +1,17 @@
-import enableReserve from './reserve.js';
-import commentFunction from './comment.js';
+import enableReserve from "./reserve.js";
+import commentFunction from "./comment.js";
 
 const displayMovies = (data) => {
-  const displayMovies = document.querySelector('#movie-list');
+  const displayMovies = document.querySelector("#movie-list");
   data.forEach((movie) => {
     displayMovies.innerHTML += `<article class="movie">
 <img src="${movie.image.medium}" alt="${movie.name}">
 <h2>${movie.name}</h2>
 <p class="genre">${movie.genres}</p>
+<div class="like-rating">
+<i class="fa-solid fa-heart" data-id="${movie.id}"></i>
+<i class="fa-solid fa-star" data-id="${movie.id}"></i>
+</div>
 <div class="button">
 <button class="comment" id="${movie.id}">Comments</button>
 <button id="${movie.id}" class="show-reserve-popup" 
@@ -23,7 +27,7 @@ rating="${movie.rating.average}">Reservations</button>
 };
 
 const getMovies = async () => {
-  const response = await fetch('https://api.tvmaze.com/shows');
+  const response = await fetch("https://api.tvmaze.com/shows");
   const data = await response.json();
   const slicedData = data.slice(0, 50);
   displayMovies(slicedData);
