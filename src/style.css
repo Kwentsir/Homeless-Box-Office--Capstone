@@ -120,6 +120,24 @@ footer {
   display: none;
 }
 
+#comment-section {
+  text-align: center;
+}
+
+#comment-section p {
+  color: white;
+}
+
+#review-title {
+  color: white;
+  font-weight: 600;
+}
+
+#comment-section hr {
+  border-color: gray;
+  width: 30%;
+}
+
 /* Reservations */
 
 #display-reservations {
