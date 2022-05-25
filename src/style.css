@@ -120,6 +120,23 @@ footer {
   display: none;
 }
 
+#comment-section {
+  text-align: center;
+}
+
+#comment-section p {
+  color: white;
+}
+
+#comment-section h4 {
+  color: azure;
+}
+
+#comment-section hr {
+  border-color: gray;
+  width: 30%;
+}
+
 /* Reservations */
 
 #display-reservations {
