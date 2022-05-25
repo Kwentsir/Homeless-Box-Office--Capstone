@@ -1,4 +1,5 @@
 import getComment from "./getComment.js";
+import addComment from "./addComment.js";
 
 const commentFunction = () => {
   const getSingleMovieData = async (id) => {
@@ -33,9 +34,9 @@ const commentFunction = () => {
           </ul>
 
           <form id="add-comment">
-          <input id="name" name="user-name" type="text" maxlength="30" placeholder="Your Name" required="">
-          <input id="name" name="user-name" type="text" maxlength="150" placeholder="Your Review" required="">
-          <button id="comment-submit" type="submit">Submit</button>
+          <input id="reviewer-name" type="text" maxlength="30" placeholder="Your Name">
+          <textarea  id="review" maxlength="500" placeholder="Your Review"></textarea>
+           <button id="comment-submit" type="submit">Submit</button>
           <form>
       `;
 
@@ -43,8 +44,10 @@ const commentFunction = () => {
       closeButton.addEventListener("click", () => {
         dialog.close();
       });
-      // Get comment function
+      // Call get comment function
       getComment(targetId);
+      //Call add comment function
+      addComment(targetId);
     });
   };
   const addClickEvent = (button) => {
