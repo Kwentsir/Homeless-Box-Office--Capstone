@@ -1,3 +1,5 @@
+import countComment from './countComment.js';
+
 const getComment = (idTarget) => {
   const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yVTwDpeZ7FtqX6HWOiZh/comments?item_id=item';
 
@@ -14,7 +16,8 @@ const getComment = (idTarget) => {
 
   fetch(`${urlRoot}${idTarget}`)
     .then((response) => response.json())
-    .then((json) => displayComment(json));
+    .then((json) => displayComment(json))
+    .then(() => countComment());
 };
 
 export default getComment;
