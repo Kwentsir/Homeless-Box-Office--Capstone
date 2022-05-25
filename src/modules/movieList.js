@@ -9,8 +9,8 @@ const displayMovies = (data) => {
 <h2>${movie.name}</h2>
 <p class="genre">${movie.genres}</p>
 <div class="like-rating">
-<i class="fa-solid fa-heart" data-id="${movie.id}"></i>
-<i class="fa-solid fa-star" data-id="${movie.id}"></i>
+<i class="fa-solid fa-heart" id="${movie.id}"></i>
+<i class="fa-solid fa-star" id="${movie.id}"></i>
 </div>
 <div class="button">
 <button class="comment" id="${movie.id}">Comments</button>
