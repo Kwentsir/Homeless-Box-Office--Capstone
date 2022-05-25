@@ -1,10 +1,10 @@
 /**
  * @jest-environment jsdom
  */
-import countComment from "./countComment";
+import countComment from './countComment.js';
 
-  test("count the number of the li elements in the review section", () => {
-      document.body.innerHTML = `
+test('count the number of the li elements in the review section', () => {
+  document.body.innerHTML = `
     <ul id="comment-section">
     <li>1</li>
     <li>2</li>
@@ -12,6 +12,5 @@ import countComment from "./countComment";
     <li>4</li>
     </ul>
   `;
-    expect(countComment()).toBe(4);
-  });
-
+  expect(countComment()).toBe(4);
+});

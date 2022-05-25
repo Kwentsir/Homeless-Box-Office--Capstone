@@ -1,3 +1,5 @@
+import getComment from './getComment.js';
+
 const addComment = (itemId) => {
   const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yVTwDpeZ7FtqX6HWOiZh/comments';
 
@@ -12,7 +14,7 @@ const addComment = (itemId) => {
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-    });
+    }).then(getComment(itemId));
   };
 
   const commentForm = document.querySelector('#add-comment');
