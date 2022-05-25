@@ -23,7 +23,7 @@ const postLike = async (movieId) => {
       item_id: movieId,
     }),
   });
-  return response;
+  console.log(response);
 };
 
 export { getLikes, postLike, getLike };

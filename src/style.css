@@ -189,11 +189,13 @@ footer {
 }
 
 .fa-heart {
+  cursor: pointer;
   color: red;
   padding-right: 3rem;
 }
 
 .fa-star {
+  cursor: pointer;
   color: goldenrod;
   padding-left: 3rem;
 }
