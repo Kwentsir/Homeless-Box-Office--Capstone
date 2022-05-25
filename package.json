@@ -1,7 +1,7 @@
 {
   "devDependencies": {
-    "@babel/core": "^7.18.0",
-    "@babel/preset-env": "^7.18.0",
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^28.1.0",
     "css-loader": "^6.7.1",
@@ -23,7 +23,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "build": "webpack",
     "watch": "webpack --watch",
     "start": "webpack serve --open"
