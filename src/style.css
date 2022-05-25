@@ -72,6 +72,54 @@ footer {
   color: white;
 }
 
+/* comment pop-up */
+.comment-popup {
+  position: fixed;
+  border: none;
+  width: 100vw;
+  background-color: #000107;
+  height: 100vh;
+}
+
+.comment-popup-close-button {
+  position: absolute;
+  font-size: 42px;
+  right: 10px;
+  z-index: 999;
+  cursor: pointer;
+  padding: 5px;
+  border-top: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.movie-description {
+  width: 100%;
+  text-align: center;
+}
+
+.movie-description p {
+  width: 50%;
+  margin: 20px auto;
+  color: white;
+}
+
+.poster-container {
+  width: 100%;
+  text-align: center;
+}
+
+#media-poster {
+  position: relative;
+  width: 20%;
+}
+
+.display-none {
+  display: none;
+}
+
 /* Reservations */
 
 #display-reservations {

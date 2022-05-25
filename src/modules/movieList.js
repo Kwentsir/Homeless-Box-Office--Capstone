@@ -1,15 +1,15 @@
-import enableReserve from './reserve';
+import enableReserve from './reserve.js';
+import commentFunction from './comment.js';
 
 const displayMovies = (data) => {
   const displayMovies = document.querySelector('#movie-list');
   data.forEach((movie) => {
-    console.log(movie);
     displayMovies.innerHTML += `<article class="movie">
 <img src="${movie.image.medium}" alt="${movie.name}">
 <h2>${movie.name}</h2>
 <p class="genre">${movie.genres}</p>
 <div class="button">
-<button id="${movie.id}">Comments</button>
+<button class="comment" id="${movie.id}">Comments</button>
 <button id="${movie.id}" class="show-reserve-popup" 
 banner="${movie.image.medium}" 
 title="${movie.name}" 
@@ -28,7 +28,7 @@ const getMovies = async () => {
   const slicedData = data.slice(0, 50);
   displayMovies(slicedData);
   enableReserve();
+  commentFunction();
 };
 getMovies();
-
 export default getMovies;
