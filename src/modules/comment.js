@@ -1,6 +1,7 @@
 import getComment from './getComment.js';
 import addComment from './addComment.js';
 
+
 const commentFunction = () => {
   const getSingleMovieData = async (id) => {
     const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
@@ -30,7 +31,7 @@ const commentFunction = () => {
           <br>
          
           <ul id="comment-section">
-          <p id="review-title">Reviews</p>
+          <p id="review-title">Reviews (<span id="review-count">0</span>)</p>
           </ul>
 
           <form id="add-comment">
