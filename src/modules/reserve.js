@@ -26,14 +26,12 @@ const enableReserve = () => {
                 <ul class="resevertions">
                   Fetching data....
                 </ul>
-                <h3 class="reservation-title">
-    reservation (<span class="Add Reservation">Add</span>)
+                <h3 class="Reservation-title">
     </h3>
-    <ul class="reservation">
-    </ul> 
-      <li<form class="reserv-form">
+    <form class="Reserv-form">
+      <h2>Add a Reservation</h2>
       <input type="text" name="username" placeholder="Your name" required>
-      <textarea placeholder="Your insights" name="date" required minlength="1"></textarea>
+      <textarea placeholder="Your date" name="reservation" required minlength="1"></textarea>
       <button type="submit">Submit</button>
     </form>
             <section>
