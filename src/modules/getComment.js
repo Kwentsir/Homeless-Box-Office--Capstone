@@ -17,7 +17,7 @@ const getComment = (idTarget) => {
   fetch(`${urlRoot}${idTarget}`)
     .then((response) => response.json())
     .then((json) => displayComment(json))
-    .then(() =>  countComment());
+    .then(() => countComment());
 };
 
 export default getComment;

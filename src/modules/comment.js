@@ -1,7 +1,6 @@
 import getComment from './getComment.js';
 import addComment from './addComment.js';
 
-
 const commentFunction = () => {
   const getSingleMovieData = async (id) => {
     const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
