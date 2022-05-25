@@ -1,3 +1,5 @@
+import fetchReservations from './fetchReservations';
+
 const enableReserve = () => {
   const showReservation = ({ ...data }) => {
     const reservationContent = document.querySelector('#display-reservations');
@@ -18,12 +20,35 @@ const enableReserve = () => {
                         <td><b>Ended:</b> ${data.ended}</td>
                     </tr>
                 </table>
+                <h3 class="reservation-title">
+                  reservation (<span class="total-reservations">0</span>)
+                </h3>
+                <ul class="resevertions">
+                  Fetching data....
+                </ul> 
             <section>
         `;
     const hideReservationBtn = reservationContent.querySelector('.hide-reservation');
     reservationContent.style.display = 'flex';
     hideReservationBtn.addEventListener('click', () => {
       reservationContent.style.display = 'none';
+    });
+    // fetch reservations from API
+    fetchReservations(data.id).then((res) => {
+      const reservations = reservationContent.querySelector('.resevertions');
+      const reservationsCounter = reservationContent.querySelector('.total-reservations');
+      if (res.error === true) {
+        reservationsCounter.innerHTML = '0';
+        reservations.innerHTML = 'No reservations have been filed yet. Be the first to make a reservation :-)';
+      } else {
+        reservations.innerHTML = '';
+        reservationsCounter.innerHTML = res.data.length;
+        res.data.forEach((reservation) => {
+          reservations.innerHTML += `
+          <li>${reservation.date_start} ${reservation.date_end} by ${reservation.username}</li>
+          `;
+        });
+      }
     });
   };
   const movies = document.querySelectorAll('.show-reserve-popup');
@@ -37,7 +62,7 @@ const enableReserve = () => {
     const language = movie.getAttribute('language');
     movie.addEventListener('click', () => {
       showReservation({
-        movieId: id, title, logo, premier, rating, ended, language,
+        id, title, logo, premier, rating, ended, language,
       });
     });
   });
