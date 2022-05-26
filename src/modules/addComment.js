@@ -3,7 +3,7 @@ import { displayComment } from './getComment.js';
 const addComment = (itemId) => {
   const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yVTwDpeZ7FtqX6HWOiZh/comments';
 
-  const postFunction = (reviewer, review) => {
+  const postFunction = (reviewer, review, callback) => {
     fetch(`${urlRoot}`, {
       method: 'POST',
       body: JSON.stringify({
@@ -18,7 +18,7 @@ const addComment = (itemId) => {
 
     const formatYmd = (date) => date.toISOString().slice(0, 10);
     const d = formatYmd(new Date());
-    displayComment([
+    callback([
       { creation_date: `${d}`, username: `${reviewer}`, comment: `${review}` },
     ]);
   };
@@ -30,7 +30,8 @@ const addComment = (itemId) => {
     const reviewSelector = document.querySelector('#review');
     const reviewer = reviewerSelector.value;
     const review = reviewSelector.value;
-    postFunction(reviewer, review);
+    // Callback function display the review immediately after submitting the form
+    postFunction(reviewer, review, displayComment);
   });
 };
 
