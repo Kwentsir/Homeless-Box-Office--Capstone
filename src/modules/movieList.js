@@ -1,12 +1,12 @@
-import enableReserve from './reserve.js';
-import commentFunction from './comment.js';
-import { getLikes, postLike, updateLikes } from './likes.js';
+import enableReserve from "./reserve.js";
+import commentFunction from "./comment.js";
+import { getLikes, postLike, updateLikes } from "./likes.js";
 
 export const listenHeartClicks = (movieId, likes) => {
-  const likeHeart = document.querySelectorAll('.fa-heart');
+  const likeHeart = document.querySelectorAll(".fa-heart");
   likeHeart.forEach((like) => {
     if (like.id === movieId) {
-      likes = parseInt(likes) + 1;
+      likes = Number(likes) + 1;
       like.nextElementSibling.textContent = likes;
       updateLikes(movieId, likes);
     }
@@ -15,7 +15,7 @@ export const listenHeartClicks = (movieId, likes) => {
 
 const displayMovies = async (data) => {
   const allLikes = await getLikes();
-  const displayMovies = document.querySelector('#movie-list');
+  const displayMovies = document.querySelector("#movie-list");
   data.forEach((movie) => {
     let movieLikes = 0;
     allLikes.forEach((like) => {
@@ -47,7 +47,7 @@ rating="${movie.rating.average}">Reservations</button>
 };
 
 const getMovies = async () => {
-  const response = await fetch('https://api.tvmaze.com/shows');
+  const response = await fetch("https://api.tvmaze.com/shows");
   const data = await response.json();
   const slicedData = data.slice(0, 50);
   slicedData.forEach((movie) => postLike(movie.id));
