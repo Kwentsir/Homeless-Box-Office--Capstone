@@ -12,7 +12,7 @@ export const displayComment = (comments) => {
 };
 
 const getComment = (idTarget) => {
-  const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yVTwDpeZ7FtqX6HWOiZh/comments?item_id=item';
+  const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LTC07aEzlGRDQH1SJmMa/comments?item_id=item';
 
   fetch(`${urlRoot}${idTarget}`)
     .then((response) => response.json())

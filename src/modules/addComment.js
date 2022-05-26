@@ -1,7 +1,7 @@
 import { displayComment } from './getComment.js';
 
 const addComment = (itemId) => {
-  const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yVTwDpeZ7FtqX6HWOiZh/comments';
+  const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/LTC07aEzlGRDQH1SJmMa/comments';
 
   const postFunction = (reviewer, review, callback) => {
     fetch(`${urlRoot}`, {
