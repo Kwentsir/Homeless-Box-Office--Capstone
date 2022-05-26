@@ -1,32 +1,36 @@
-import enableReserve from "./reserve.js";
-import commentFunction from "./comment.js";
-import { getLike, getLikes, postLike } from "./likes.js";
-getLike();
-getLikes();
-const listenHeartClicks = () =>{
-  const likeHeart = document.querySelectorAll(".like-icon");
-  likeHeart.forEach((icon) =>{
-    icon.addEventListener('click', async (e) =>{
-      const {id} = e.target.dataset;
-      const response = await postLike(id);
-      if (response.status === 201){
-        e.target.nextElementSibling.innerHTML = Number(e.target.nextElementSibling.innerHTML) + 1;
-      }
-    });
+import enableReserve from './reserve.js';
+import commentFunction from './comment.js';
+import { getLikes, postLike, updateLikes } from './likes.js';
+
+export const listenHeartClicks = (movieId, likes) => {
+  const likeHeart = document.querySelectorAll('.fa-heart');
+  likeHeart.forEach((like) => {
+    if (like.id === movieId) {
+      likes = parseInt(likes) + 1;
+      like.nextElementSibling.textContent = likes;
+      updateLikes(movieId, likes);
+    }
   });
 };
-listenHeartClicks();
 
-const displayMovies = (data) => {
-  const displayMovies = document.querySelector("#movie-list");
+const displayMovies = async (data) => {
+  const allLikes = await getLikes();
+  const displayMovies = document.querySelector('#movie-list');
   data.forEach((movie) => {
+    let movieLikes = 0;
+    allLikes.forEach((like) => {
+      if (like.item_id === movie.id) {
+        movieLikes = like.likes;
+      }
+    });
     displayMovies.innerHTML += `<article class="movie">
 <img src="${movie.image.medium}" alt="${movie.name}">
 <h2>${movie.name}</h2>
 <p class="genre">${movie.genres}</p>
 <div class="like-rating">
-<i class="fa-solid fa-heart" id="${movie.id}"><span class="like-icon">L</span></i>
-<i class="fa-solid fa-star" id="${movie.id}"><span class="rate-icon">R</span></i>
+<i class="fa-solid fa-heart" id="${movie.id}"></i>
+<span>${movieLikes}</span>
+<i class="fa-solid fa-star" id="${movie.id}"></i>
 </div>
 <div class="button">
 <button class="comment" id="${movie.id}">Comments</button>
@@ -43,9 +47,10 @@ rating="${movie.rating.average}">Reservations</button>
 };
 
 const getMovies = async () => {
-  const response = await fetch("https://api.tvmaze.com/shows");
+  const response = await fetch('https://api.tvmaze.com/shows');
   const data = await response.json();
   const slicedData = data.slice(0, 50);
+  slicedData.forEach((movie) => postLike(movie.id));
   displayMovies(slicedData);
   enableReserve();
   commentFunction();

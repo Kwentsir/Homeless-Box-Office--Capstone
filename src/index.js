@@ -1,5 +1,12 @@
 import './style.css';
-import getMovies from './modules/movieList.js';
+import getMovies, { listenHeartClicks } from './modules/movieList.js';
 
 getMovies();
 // const involveapi = 'yVTwDpeZ7FtqX6HWOiZh';
+
+window.addEventListener('click', (e) => {
+  if (e.target.classList.contains('fa-heart')) {
+    const likes = e.target.nextElementSibling.textContent;
+    listenHeartClicks(e.target.id, likes);
+  }
+});
