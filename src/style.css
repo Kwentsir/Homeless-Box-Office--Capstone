@@ -133,6 +133,13 @@ footer {
   font-weight: 600;
 }
 
+#add-review-title {
+  margin-top: 50px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
+
 #comment-section hr {
   border-color: gray;
   width: 30%;
