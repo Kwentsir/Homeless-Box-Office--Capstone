@@ -4,7 +4,7 @@
 import countComment from './countComment.js';
 
 test('count the number of the li elements in the review section', () => {
-  //arrange
+  // arrange
   document.body.innerHTML = `
     <ul id="comment-section">
     <li>1</li>
@@ -13,8 +13,8 @@ test('count the number of the li elements in the review section', () => {
     <li>4</li>
     </ul>
   `;
-  //act
+  // act
   expect(countComment())
-//assert
-  .toBe(4);
+  // assert
+    .toBe(4);
 });
