@@ -1,4 +1,4 @@
-import fetchReservations from './fetchReservations';
+import fetchReservations from './fetchReservations.js';
 
 const enableReserve = () => {
   const showReservation = ({ ...data }) => {
