@@ -1,5 +1,5 @@
-import addReservation from './addReservation.js';
-import fetchReservations from './fetchReservations.js';
+import addReservation from './addReservation';
+import fetchReservations from './fetchReservations';
 
 const enableReserve = () => {
   const showReservation = ({ ...data }) => {
@@ -53,30 +53,10 @@ const enableReserve = () => {
       const id = e.target.attributes.id.value;
       addReservation(id, name, start, end).then(
       );
-      getData();
       name.value = '';
       start.value = '';
       end.value = '';
     });
-
-    const getData = () => {
-      fetchReservations(data.id).then((res) => {
-        const reservations = reservationContent.querySelector('.resevertions');
-        const reservationsCounter = reservationContent.querySelector('.total-reservations');
-        if (res.error === true) {
-          reservationsCounter.innerHTML = '0';
-          reservations.innerHTML = 'No reservations have been filed yet. Be the first to make a reservation :-)';
-        } else {
-          reservations.innerHTML = '';
-          reservationsCounter.innerHTML = res.data.length;
-          res.data.forEach((reservation) => {
-            reservations.innerHTML += `
-            <li>From ${reservation.date_start} to ${reservation.date_end} by ${reservation.username}</li>
-            `;
-          });
-        }
-      });
-    };
 
     // fetch reservations from API
     fetchReservations(data.id).then((res) => {
