@@ -90,7 +90,7 @@ const enableReserve = () => {
         reservations.innerHTML = 'No reservations have been filed yet. Be the first to make a reservation :-)';
       } else {
         reservations.innerHTML = '';
-        reservationsCounter.innerHTML = res.data;
+        reservationsCounter.innerHTML = res.data.length;
         res.data.forEach((reservation) => {
           reservations.innerHTML += `
           <li>From ${reservation.date_start} to ${reservation.date_end} by ${reservation.username}</li>
