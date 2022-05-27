@@ -1,4 +1,5 @@
-import fetchReservations from './fetchReservations.js';
+import addReservation from './addReservation';
+import fetchReservations from './fetchReservations';
 
 const enableReserve = () => {
   const showReservation = ({ ...data }) => {
@@ -26,21 +27,37 @@ const enableReserve = () => {
                 <ul class="resevertions">
                   Fetching data....
                 </ul>
-                <h3 class="Reservation-title">
+                
+    <h3 class="Reservation-title">
     </h3>
-    <form class="Reserv-form">
+    <div class="Reserv-form">
       <h2>Add a Reservation</h2>
-      <input type="text" name="username" placeholder="Your name" required>
-      <textarea placeholder="Your date" name="reservation" required minlength="1"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-            <section>
+      <input type="text" name="username" class="username" placeholder="Your name" required>
+      <input type="text" name="dateStart" class="dateStart" placeholder="Start date" required>
+      <input type="text" name="dateEnd" class="dateEnd" placeholder="End date" required>
+      <button class="add-reserve-btn" id="${data.id}" type="submit">Submit</button>
+    </div>
         `;
     const hideReservationBtn = reservationContent.querySelector('.hide-reservation');
     reservationContent.style.display = 'flex';
     hideReservationBtn.addEventListener('click', () => {
       reservationContent.style.display = 'none';
     });
+
+    // add reservation
+    const name = document.querySelector('.username');
+    const start = document.querySelector('.dateStart');
+    const end = document.querySelector('.dateEnd');
+    const reserveBtn = document.querySelector('.add-reserve-btn');
+    reserveBtn.addEventListener('click', (e) => {
+      const id = e.target.attributes.id.value;
+      addReservation(id, name, start, end).then(
+      );
+      name.value = '';
+      start.value = '';
+      end.value = '';
+    });
+
     // fetch reservations from API
     fetchReservations(data.id).then((res) => {
       const reservations = reservationContent.querySelector('.resevertions');
@@ -53,7 +70,7 @@ const enableReserve = () => {
         reservationsCounter.innerHTML = res.data.length;
         res.data.forEach((reservation) => {
           reservations.innerHTML += `
-          <li>${reservation.date_start} ${reservation.date_end} by ${reservation.username}</li>
+          <li>From ${reservation.date_start} to ${reservation.date_end} by ${reservation.username}</li>
           `;
         });
       }

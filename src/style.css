@@ -214,6 +214,7 @@ footer {
 
 .reserve-title {
   text-align: center;
+  text-decoration: underline;
 }
 
 .movieContent table {
@@ -234,5 +235,5 @@ footer {
 .Reserv-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
