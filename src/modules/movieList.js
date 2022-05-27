@@ -1,6 +1,7 @@
 import enableReserve from './reserve.js';
 import commentFunction from './comment.js';
 import { getLikes, postLikes } from './likes.js';
+import countMovies from './moviecount.js';
 
 export const listenHeartClicks = (movieId, likes) => {
   const likeHeart = document.querySelectorAll('.fa-heart');
@@ -60,6 +61,7 @@ const getMovies = async () => {
   displayMovies(slicedData);
   enableReserve();
   commentFunction();
+  countMovies();
 };
 
 export default getMovies;
