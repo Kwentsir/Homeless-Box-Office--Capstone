@@ -23,7 +23,7 @@ const commentFunction = () => {
           <img id="media-poster" src="${singleData.image.original}">
           </div>
           <div class="movie-description">
-          <p>${singleData.name} ${singleData.rating.average}</p>
+          <p class="comment-popup-movie-name">${singleData.name} </strong> ⭐${singleData.rating.average}</p>
           <p><strong>Genre:</strong> ${singleData.genres}</p>
           <p>${singleData.summary}</p>
           </div>
@@ -37,7 +37,7 @@ const commentFunction = () => {
           <form id="add-comment">
           <input id="reviewer-name" type="text" maxlength="30" placeholder="Your Name" required>
           <textarea  id="review" maxlength="500" placeholder="Your Review" required></textarea>
-           <button id="comment-submit" type="submit">Submit</button>
+           <button id="comment-submit" type="submit">SUBMIT</button>
           <form>
       `;
 

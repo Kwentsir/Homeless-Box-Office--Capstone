@@ -106,6 +106,12 @@ footer {
   color: white;
 }
 
+.comment-popup-movie-name {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .poster-container {
   width: 100%;
   text-align: center;
@@ -113,7 +119,7 @@ footer {
 
 #media-poster {
   position: relative;
-  width: 20%;
+  width: 30%;
 }
 
 .display-none {
@@ -122,6 +128,7 @@ footer {
 
 #comment-section {
   text-align: center;
+  padding: 0;
 }
 
 #comment-section p {
@@ -141,8 +148,9 @@ footer {
 }
 
 #comment-section hr {
-  border-color: gray;
+  border-color: rgb(64, 64, 64);
   width: 30%;
+  border-width: 0.1px;
 }
 
 #add-comment {
@@ -156,24 +164,27 @@ footer {
 
 #reviewer-name {
   width: 40%;
-  height: 30px;
+  height: 40px;
   font-size: 16px;
   font-weight: 400;
+  padding: 5px;
 }
 
 #review {
+  padding: 5px;
   width: 40%;
   height: 100px;
-  font-size: 16px;
+  font-size: inherit;
   font-family: inherit;
-  font-weight: 400;
+  font-weight: inherit;
 }
 
 #comment-submit {
-  width: 100px;
+  width: 120px;
   height: 50px;
   font-size: 16px;
   background-color: white;
+  border: none;
 }
 
 /* Reservations */
