@@ -1,5 +1,5 @@
-import getComment from "./getComment.js";
-import addComment from "./addComment.js";
+import getComment from './getComment.js';
+import addComment from './addComment.js';
 
 const commentFunction = () => {
   const getSingleMovieData = async (id) => {
@@ -8,12 +8,12 @@ const commentFunction = () => {
     return singleData;
   };
 
-  const commentButtons = document.querySelectorAll(".comment");
+  const commentButtons = document.querySelectorAll('.comment');
 
   const openPopup = (event) => {
     const targetId = event.target.id;
 
-    const dialog = document.querySelector("dialog");
+    const dialog = document.querySelector('dialog');
     dialog.showModal();
 
     getSingleMovieData(targetId).then((singleData) => {
@@ -41,8 +41,8 @@ const commentFunction = () => {
           <form>
       `;
 
-      const closeButton = document.querySelector("#close-button");
-      closeButton.addEventListener("click", () => {
+      const closeButton = document.querySelector('#close-button');
+      closeButton.addEventListener('click', () => {
         dialog.close();
       });
       // Call get comment function
@@ -52,7 +52,7 @@ const commentFunction = () => {
     });
   };
   const addClickEvent = (button) => {
-    button.addEventListener("click", openPopup);
+    button.addEventListener('click', openPopup);
   };
 
   commentButtons.forEach(addClickEvent);
