@@ -1,3 +1,5 @@
+import { displayComment } from './getComment.js';
+
 const addComment = (itemId) => {
   const urlRoot = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/yVTwDpeZ7FtqX6HWOiZh/comments';
 
@@ -13,6 +15,12 @@ const addComment = (itemId) => {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
+
+    const formatYmd = (date) => date.toISOString().slice(0, 10);
+    const d = formatYmd(new Date());
+    displayComment([
+      { creation_date: `${d}`, username: `${reviewer}`, comment: `${review}` },
+    ]);
   };
 
   const commentForm = document.querySelector('#add-comment');

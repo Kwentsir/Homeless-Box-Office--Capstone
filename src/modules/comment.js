@@ -30,7 +30,7 @@ const commentFunction = () => {
           <br>
          
           <ul id="comment-section">
-          <p id="review-title">Reviews</p>
+          <p id="review-title">Reviews (<span id="review-count">0</span>)</p>
           </ul>
 
           <form id="add-comment">
