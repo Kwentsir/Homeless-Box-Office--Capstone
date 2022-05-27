@@ -1,7 +1,5 @@
-
-import addReservation from './addReservation';
-import fetchReservations from './fetchReservations';
-
+import addReservation from './addReservation.js';
+import fetchReservations from './fetchReservations.js';
 
 const enableReserve = () => {
   const showReservation = ({ ...data }) => {
@@ -54,16 +52,14 @@ const enableReserve = () => {
     reserveBtn.addEventListener('click', (e) => {
       const id = e.target.attributes.id.value;
       addReservation(id, name, start, end).then(
-        getData()
       );
+      getData();
       name.value = '';
       start.value = '';
       end.value = '';
-      
     });
 
     const getData = () => {
-
       fetchReservations(data.id).then((res) => {
         const reservations = reservationContent.querySelector('.resevertions');
         const reservationsCounter = reservationContent.querySelector('.total-reservations');
@@ -99,7 +95,6 @@ const enableReserve = () => {
         });
       }
     });
-    
   };
   const movies = document.querySelectorAll('.show-reserve-popup');
   movies.forEach((movie) => {
