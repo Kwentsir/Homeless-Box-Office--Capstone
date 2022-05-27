@@ -89,13 +89,13 @@ footer {
 .comment-popup {
   position: fixed;
   border: none;
-  width: 100vw;
   background-color: #000107;
-  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .comment-popup-close-button {
-  position: absolute;
+  position: fixed;
   font-size: 42px;
   right: 10px;
   z-index: 999;
@@ -151,6 +151,37 @@ footer {
   width: 30%;
 }
 
+#add-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+#reviewer-name {
+  width: 40%;
+  height: 30px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#review {
+  width: 40%;
+  height: 100px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+#comment-submit {
+  width: 100px;
+  height: 50px;
+  font-size: 16px;
+  background-color: white;
+}
+
 /* Reservations */
 
 #display-reservations {
@@ -163,6 +194,7 @@ footer {
   background: #000;
   padding-top: 5px;
   color: #fff;
+  overflow-y: auto;
 }
 
 .hide-reservation {
@@ -197,4 +229,10 @@ footer {
   cursor: pointer;
   color: goldenrod;
   padding-left: 3rem;
+}
+
+.Reserv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
