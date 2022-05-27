@@ -1,7 +1,9 @@
 import './style.css';
 import getMovies, { listenHeartClicks } from './modules/movieList.js';
+import countMovies from './modules/moviecount.js';
 
 getMovies();
+countMovies();
 // const involveapi = 'yVTwDpeZ7FtqX6HWOiZh';
 
 window.addEventListener('click', (e) => {
