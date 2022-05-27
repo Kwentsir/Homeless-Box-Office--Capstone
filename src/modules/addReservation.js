@@ -24,7 +24,7 @@ const addReservation = async (itemId, username, dateStart, dateEnd) => {
                 return true;
         }
         catch (err) {
-           console.log('Request error: ', err);
+        //    console.log('Request error: ', err);
         }
     }
     return false;
