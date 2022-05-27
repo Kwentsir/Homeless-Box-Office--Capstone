@@ -2,8 +2,6 @@
   "devDependencies": {
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
-    "@babel/preset-typescript": "^7.17.12",
-    "@types/jest": "^27.5.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^28.1.0",
     "css-loader": "^6.7.1",
@@ -17,7 +15,6 @@
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^2.0.0",
     "stylelint-scss": "^3.21.0",
-    "ts-jest": "^28.0.3",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
   },
