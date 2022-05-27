@@ -49,10 +49,23 @@ header {
   text-align: center;
 }
 
+#movie-list {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem 1rem;
+}
+
 article {
-  color: white;
+  background-color: white;
+  color: #000;
   font-size: 20px;
+  padding: 4px;
   text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
 }
 
 .genre {
@@ -205,6 +218,17 @@ footer {
 
 .movieContent table {
   text-align: left;
+}
+
+.fa-heart {
+  cursor: pointer;
+  color: red;
+}
+
+.fa-star {
+  cursor: pointer;
+  color: goldenrod;
+  padding-left: 3rem;
 }
 
 .Reserv-form {
