@@ -1,7 +1,5 @@
-
-import addReservation from './addReservation';
-import fetchReservations from './fetchReservations';
-
+import addReservation from './addReservation.js';
+import fetchReservations from './fetchReservations.js';
 
 const enableReserve = () => {
   const showReservation = ({ ...data }) => {
@@ -45,25 +43,7 @@ const enableReserve = () => {
     hideReservationBtn.addEventListener('click', () => {
       reservationContent.style.display = 'none';
     });
-
-    // add reservation
-    const name = document.querySelector('.username');
-    const start = document.querySelector('.dateStart');
-    const end = document.querySelector('.dateEnd');
-    const reserveBtn = document.querySelector('.add-reserve-btn');
-    reserveBtn.addEventListener('click', (e) => {
-      const id = e.target.attributes.id.value;
-      addReservation(id, name, start, end).then(
-        getData()
-      );
-      name.value = '';
-      start.value = '';
-      end.value = '';
-      
-    });
-
     const getData = () => {
-
       fetchReservations(data.id).then((res) => {
         const reservations = reservationContent.querySelector('.resevertions');
         const reservationsCounter = reservationContent.querySelector('.total-reservations');
@@ -81,6 +61,20 @@ const enableReserve = () => {
         }
       });
     };
+    // add reservation
+    const name = document.querySelector('.username');
+    const start = document.querySelector('.dateStart');
+    const end = document.querySelector('.dateEnd');
+    const reserveBtn = document.querySelector('.add-reserve-btn');
+    reserveBtn.addEventListener('click', (e) => {
+      const id = e.target.attributes.id.value;
+      addReservation(id, name, start, end).then(
+        getData(),
+      );
+      name.value = '';
+      start.value = '';
+      end.value = '';
+    });
 
     // fetch reservations from API
     fetchReservations(data.id).then((res) => {
@@ -99,7 +93,6 @@ const enableReserve = () => {
         });
       }
     });
-    
   };
   const movies = document.querySelectorAll('.show-reserve-popup');
   movies.forEach((movie) => {

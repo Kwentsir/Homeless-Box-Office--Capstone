@@ -237,3 +237,17 @@ footer {
   flex-direction: column;
   gap: 15px;
 }
+
+.resevertions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.add-reserve-btn {
+  margin-bottom: 12px;
+  width: 121px;
+  align-self: center;
+  padding: 5px;
+}
