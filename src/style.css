@@ -135,6 +135,7 @@ footer {
 
 #comment-section {
   text-align: center;
+  padding: 0;
 }
 
 #comment-section p {
@@ -147,8 +148,9 @@ footer {
 }
 
 #comment-section hr {
-  border-color: gray;
   width: 30%;
+  border-color: rgb(64, 64, 64);
+  border-width: 0.1px;
 }
 
 #add-comment {
@@ -250,4 +252,17 @@ footer {
   width: 121px;
   align-self: center;
   padding: 5px;
+}
+
+.comment-popup-movie-name {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#add-review-title {
+  margin-top: 50px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
 }
