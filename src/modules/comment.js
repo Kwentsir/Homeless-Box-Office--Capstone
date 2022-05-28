@@ -7,23 +7,19 @@ const commentFunction = () => {
     const singleData = await response.json();
     return singleData;
   };
-
   const commentButtons = document.querySelectorAll('.comment');
-
   const openPopup = (event) => {
     const targetId = event.target.id;
-
     const dialog = document.querySelector('dialog');
     dialog.showModal();
-
     getSingleMovieData(targetId).then((singleData) => {
       dialog.innerHTML = `
           <a id="close-button" class="comment-popup-close-button" href="#">X</a>
-        <div class="poster-container">
+          <div class="poster-container">
           <img id="media-poster" src="${singleData.image.original}">
           </div>
-      <div class="movie-description">
-          <p>${singleData.name} ${singleData.rating.average}</p>
+          <div class="movie-description">
+          <p class="comment-popup-movie-name">${singleData.name} </strong> ⭐${singleData.rating.average}</p>
           <p><strong>Genre:</strong> ${singleData.genres}</p>
           <p>${singleData.summary}</p>
           </div>
@@ -32,11 +28,12 @@ const commentFunction = () => {
           <ul id="comment-section">
           <p id="review-title">Reviews (<span id="review-count">0</span>)</p>
           </ul>
-
+          
+          <p id="add-review-title">Add Review</p>
           <form id="add-comment">
-          <input id="reviewer-name" type="text" maxlength="30" placeholder="Your Name">
-          <textarea  id="review" maxlength="500" placeholder="Your Review"></textarea>
-           <button id="comment-submit" type="submit">Submit</button>
+          <input id="reviewer-name" type="text" maxlength="30" placeholder="Your Name" required>
+          <textarea  id="review" maxlength="500" placeholder="Your Review" required></textarea>
+           <button id="comment-submit" type="submit">SUBMIT</button>
           <form>
       `;
 
@@ -53,8 +50,6 @@ const commentFunction = () => {
   const addClickEvent = (button) => {
     button.addEventListener('click', openPopup);
   };
-
   commentButtons.forEach(addClickEvent);
 };
-
 export default commentFunction;
