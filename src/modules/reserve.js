@@ -43,23 +43,6 @@ const enableReserve = () => {
     hideReservationBtn.addEventListener('click', () => {
       reservationContent.style.display = 'none';
     });
-
-    // add reservation
-    const name = document.querySelector('.username');
-    const start = document.querySelector('.dateStart');
-    const end = document.querySelector('.dateEnd');
-    const reserveBtn = document.querySelector('.add-reserve-btn');
-    reserveBtn.addEventListener('click', (e) => {
-      const id = e.target.attributes.id.value;
-      addReservation(id, name, start, end);
-      // .then(
-      //   getData(),
-      // );
-      name.value = '';
-      start.value = '';
-      end.value = '';
-    });
-
     const getData = () => {
       fetchReservations(data.id).then((res) => {
         const reservations = reservationContent.querySelector('.resevertions');
@@ -78,7 +61,20 @@ const enableReserve = () => {
         }
       });
     };
-    getData();
+    // add reservation
+    const name = document.querySelector('.username');
+    const start = document.querySelector('.dateStart');
+    const end = document.querySelector('.dateEnd');
+    const reserveBtn = document.querySelector('.add-reserve-btn');
+    reserveBtn.addEventListener('click', (e) => {
+      const id = e.target.attributes.id.value;
+      addReservation(id, name, start, end).then(
+        getData(),
+      );
+      name.value = '';
+      start.value = '';
+      end.value = '';
+    });
 
     // fetch reservations from API
     fetchReservations(data.id).then((res) => {
