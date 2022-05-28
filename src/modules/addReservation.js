@@ -24,4 +24,4 @@ const addReservation = async (itemId, username, dateStart, dateEnd) => {
   return false;
 };
 
-module.exports = addReservation;
+export default addReservation;
