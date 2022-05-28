@@ -1,4 +1,5 @@
-const numofreservation = require ('./numOfReservations.js')
+const numofreservation = require('./numOfReservations.js');
+
 test('properly counts the number of reservations for an array of object', () => {
   const testData = [
     {
@@ -33,12 +34,3 @@ test('properly counts the number of reservations for an array', () => {
   const response = numofreservation(testData);
   expect(response).toBe(3);
 });
-
-
-
-
-
-
-
-
-
