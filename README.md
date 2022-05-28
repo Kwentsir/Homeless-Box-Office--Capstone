@@ -20,7 +20,7 @@
 
 ## Video Presentation
 
-[Video Presentation Link](https://huseyinbiyik.github.io/homeless-box-office)
+[Video Presentation Link](https://www.loom.com/share/db45381db5284ee29bd9fadc2cd8df6a)
 
 ## Getting Started
 
