@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1653731685099" clover="3.2.0">
+  <project timestamp="1653731685100" name="All files">
+    <metrics statements="10" coveredstatements="10" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3" elements="15" coveredelements="15" complexity="0" loc="10" ncloc="10" packages="1" files="3" classes="3"/>
+    <file name="countComment.js" path="C:\Users\kwent\Desktop\Microverse\Module 2\JavaScript-Capstone-Project\test\countComment.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+    </file>
+    <file name="moviecount.js" path="C:\Users\kwent\Desktop\Microverse\Module 2\JavaScript-Capstone-Project\test\moviecount.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+    </file>
+    <file name="numOfReservations.js" path="C:\Users\kwent\Desktop\Microverse\Module 2\JavaScript-Capstone-Project\test\numOfReservations.js">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="1" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="2" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
