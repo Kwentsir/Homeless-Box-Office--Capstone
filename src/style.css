@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  font-family: "Work Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #000107;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#logo-text {
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+}
+
+#menu-ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+
+#now-showing {
+  color: white;
+  font-size: 20px;
+}
+
+#menu-ul li a {
+  color: white;
+}
+
+#heading h1 {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+#movie-list {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem 1rem;
+}
+
+article {
+  background-color: white;
+  color: #000;
+  font-size: 20px;
+  padding: 4px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+
+.genre {
+  gap: 2px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.button {
+  margin-bottom: 50px;
+}
+
+footer {
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+/* comment pop-up */
+.comment-popup {
+  position: fixed;
+  border: none;
+  background-color: #000107;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.comment-popup-close-button {
+  position: fixed;
+  font-size: 42px;
+  right: 10px;
+  z-index: 999;
+  cursor: pointer;
+  padding: 5px;
+  border-top: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+.movie-description {
+  width: 100%;
+  text-align: center;
+}
+
+.movie-description p {
+  width: 50%;
+  margin: 20px auto;
+  color: white;
+}
+
+.poster-container {
+  width: 100%;
+  text-align: center;
+}
+
+#media-poster {
+  position: relative;
+  width: 20%;
+}
+
+.display-none {
+  display: none;
+}
+
+#comment-section {
+  text-align: center;
+  padding: 0;
+}
+
+#comment-section p {
+  color: white;
+}
+
+#review-title {
+  color: white;
+  font-weight: 600;
+}
+
+#comment-section hr {
+  width: 30%;
+  border-color: rgb(64, 64, 64);
+  border-width: 0.1px;
+}
+
+#add-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+#reviewer-name {
+  width: 40%;
+  height: 30px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#review {
+  width: 40%;
+  height: 100px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 400;
+}
+
+#comment-submit {
+  width: 100px;
+  height: 50px;
+  font-size: 16px;
+  background-color: white;
+}
+
+/* Reservations */
+
+#display-reservations {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  padding-top: 5px;
+  color: #fff;
+  overflow-y: auto;
+}
+
+.hide-reservation {
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.movieContent {
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.reserve-title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.movieContent table {
+  text-align: left;
+}
+
+.fa-heart {
+  cursor: pointer;
+  color: red;
+}
+
+.fa-star {
+  cursor: pointer;
+  color: goldenrod;
+  padding-left: 3rem;
+}
+
+.Reserv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.resevertions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+
+.add-reserve-btn {
+  margin-bottom: 12px;
+  width: 121px;
+  align-self: center;
+  padding: 5px;
+}
+
+.comment-popup-movie-name {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#add-review-title {
+  margin-top: 50px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+}
