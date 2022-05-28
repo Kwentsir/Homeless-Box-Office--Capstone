@@ -16,7 +16,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://huseyinbiyik.github.io/homeless-box-office)
+[Live Demo Link](https://kwentsir.github.io/Homeless-Box-Office--Capstone)
 
 ## Video Presentation
 
@@ -64,7 +64,7 @@ You can check the movies, their ratings, reviews and make reservation to them.
 
 ## 🤝 Contributing
 
-	@@ -64,9 +75,7 @@ Give a ⭐️ if you like this project!
+Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
